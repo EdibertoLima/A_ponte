@@ -5,15 +5,20 @@
  */
 package a_ponte;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Random;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 
 /**
  *
  * @author Betim
  */
-public class janela_caro extends javax.swing.JFrame {
+public class janela_caro extends javax.swing.JFrame {   
+    int i=0;
+    private JButton bota;
 
     /**
      * Creates new form janela_caro
@@ -38,8 +43,8 @@ public class janela_caro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -49,46 +54,49 @@ public class janela_caro extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
+        jPanel1.setLayout(null);
+
         jButton1.setText("Adicionar Carro");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(140, 290, 130, 30);
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 20, 0, 0);
+        jPanel1.add(jButton1);
+        jButton1.setBounds(230, 340, 130, 30);
 
         jLabel1.setForeground(new java.awt.Color(255, 5, 5));
         jLabel1.setText("Tempo de travesia");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(90, 230, 120, 20);
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(180, 280, 120, 20);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(90, 250, 100, 30);
+        jPanel1.add(jTextField1);
+        jTextField1.setBounds(180, 300, 100, 30);
 
         jLabel4.setForeground(new java.awt.Color(255, 0, 0));
         jLabel4.setText("Tempo de espera");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(210, 230, 110, 14);
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(300, 280, 110, 14);
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(210, 250, 100, 30);
+        jPanel1.add(jTextField2);
+        jTextField2.setBounds(300, 300, 100, 30);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/a_ponte/p7irh6n6j186ih4s90k26o7g0tq7ok6ja.png"))); // NOI18N
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(10, 10, 640, 330);
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(0, 0, 870, 440);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 870, 440);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -98,6 +106,7 @@ public class janela_caro extends javax.swing.JFrame {
                 novocar y = new novocar();
                 y.getT(25,5);
                 y.start();
+                criBot(bota);
                 
 //                Random v = new Random();
 //                y.getT(v.nextInt(50)+1,v.nextInt(10)+1);//colocar as coisas do botão aqui
@@ -106,7 +115,22 @@ public class janela_caro extends javax.swing.JFrame {
                 System.out.println("umbó");
         
     }//GEN-LAST:event_jButton1ActionPerformed
-
+        public void criBot(JButton bota){
+            
+        String x=" destruir Carro"+i;
+        i++;
+        JButton btn = new JButton(x);
+        btn.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                btn.remove(0);
+                
+            }
+        });
+        jLabel3.add(btn);
+        btn.setBounds(300, 200+25*i+10, 150, 20);
+    }
+    
+    
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
@@ -207,9 +231,9 @@ public class janela_caro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
