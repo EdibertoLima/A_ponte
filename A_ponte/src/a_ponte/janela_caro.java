@@ -103,10 +103,12 @@ public class janela_caro extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+                
                 novocar y = new novocar();
                 y.getT(25,5);
                 y.start();
                 criBot(bota);
+               
                 
 //                Random v = new Random();
 //                y.getT(v.nextInt(50)+1,v.nextInt(10)+1);//colocar as coisas do botão aqui
@@ -144,7 +146,7 @@ public class janela_caro extends javax.swing.JFrame {
         int vx,te,i=1;
         boolean t=true;
         JLabel lcar = new JLabel(new ImageIcon(getClass().getResource("carro_medio.png")));
-        
+       
         public void getT(int vx,int te){
             this.vx = vx;
             this.te = te;
@@ -162,6 +164,7 @@ public class janela_caro extends javax.swing.JFrame {
          
             while(t){
                 try{Thread.sleep(vx);}catch(Exception erro){}
+                
                 lcar.setBounds(lcar.getX()+this.i, 150, 45, 20);
                if(x>10){
                 lcar.setIcon(iccarm);
