@@ -5,6 +5,7 @@
  */
 package a_ponte;
 
+import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -21,9 +22,11 @@ public class janela_caro extends javax.swing.JFrame {
        
         
         initComponents();
+        setSize(650,550);
         novocar x = new novocar();
         x.getT(25,5);
         x.start();
+        
     }
 
     /**
@@ -35,45 +38,82 @@ public class janela_caro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/a_ponte/p7irh6n6j186ih4s90k26o7g0tq7ok6ja.png"))); // NOI18N
-        jLabel3.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                jLabel3AncestorAdded(evt);
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+        jButton1.setText("Adicionar Carro");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(140, 290, 130, 30);
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, 20, 0, 0);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(147, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(21, 21, 21))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(jLabel3)
-                .addContainerGap(92, Short.MAX_VALUE))
-        );
+        jLabel1.setForeground(new java.awt.Color(255, 5, 5));
+        jLabel1.setText("Tempo de travesia");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(90, 230, 120, 20);
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(90, 250, 100, 30);
+
+        jLabel4.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel4.setText("Tempo de espera");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(210, 230, 110, 14);
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(210, 250, 100, 30);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/a_ponte/p7irh6n6j186ih4s90k26o7g0tq7ok6ja.png"))); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(10, 10, 640, 330);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel3AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel3AncestorAdded
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel3AncestorAdded
+                novocar y = new novocar();
+                y.getT(25,5);
+                y.start();
+                
+//                Random v = new Random();
+//                y.getT(v.nextInt(50)+1,v.nextInt(10)+1);//colocar as coisas do botão aqui
+                
+                
+                System.out.println("umbó");
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
     
     public class novocar extends Thread{
         int x=0;
@@ -98,7 +138,7 @@ public class janela_caro extends javax.swing.JFrame {
          
             while(t){
                 try{Thread.sleep(vx);}catch(Exception erro){}
-                lcar.setBounds(lcar.getX()+this.i, 300, 45, 18);
+                lcar.setBounds(lcar.getX()+this.i, 150, 45, 20);
                if(x>10){
                 lcar.setIcon(iccarm);
                 x++;
@@ -120,8 +160,10 @@ public class janela_caro extends javax.swing.JFrame {
         
     }     public void adcar(JLabel x){
           
-        x.setBounds(100, 0, 45, 18);
-        add(x);
+        x.setBounds(100,150, 45, 20);
+            add(x);
+            jLabel3.add(x);
+                
 
     }
     /**
@@ -163,8 +205,13 @@ public class janela_caro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 
 }
